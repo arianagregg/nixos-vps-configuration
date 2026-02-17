@@ -43,7 +43,7 @@
                 "/swap" = {
                   mountpoint = "/swap";
                   swap = {
-                    swapfile.size = "8G"
+                    swapfile.size = "8G";
                   };
                 };
               };
