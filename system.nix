@@ -33,7 +33,7 @@
   users.users.cxefa = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-    openssh.authorizedKeys = [
+    openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBLFdD+qIFApRViRbqyWJTJads23WuGAwvxZPMDRnWKf telempiel"
     ];
     shell = pkgs.zsh;
