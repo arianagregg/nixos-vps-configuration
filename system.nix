@@ -29,6 +29,8 @@
     };
   };
 
+  programs.zsh.enable = true;
+
   users.mutableUsers = false;
   users.users.cxefa = {
     isNormalUser = true;
