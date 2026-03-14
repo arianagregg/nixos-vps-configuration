@@ -43,8 +43,8 @@
     shell = pkgs.zsh;
   };
 
-  # last resort in case of accidental deletion of /etc/nixos
-  #system.copySystemConfiguration = true;
+  # passwordless sudo
+  security.sudo.wheelNeedsPassword = false;
 
   system.stateVersion = "25.11";
 }
