@@ -11,7 +11,7 @@
     impermanence = {
       url = "github:nix-community/impermanence";
       inputs.nixpkgs.follows = "nixpkgs";
-    }
+    };
   };
   outputs = inputs@{ self, nixpkgs, disko, impermanence, ... }: {
     nixosConfigurations = {
