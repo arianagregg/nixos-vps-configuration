@@ -42,7 +42,7 @@
   };
 
   # last resort in case of accidental deletion of /etc/nixos
-  system.copySystemConfiguration = true;
+  #system.copySystemConfiguration = true;
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 }
