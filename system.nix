@@ -10,7 +10,8 @@
   networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
-  boot.loader.grub.device = "/dev/sda";
+  # Somehow prevents "mirroredBoots" error??? Idk man just leave it alone
+  boot.loader.grub.devices = lib.mkForce [ "/dev/sda" ];
 
   environment.systemPackages = with pkgs; [
     neovim

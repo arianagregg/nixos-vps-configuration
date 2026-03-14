@@ -21,10 +21,11 @@
             };
           };
           root = {
+	    label = "root";
             size = "100%";
             content = {
               type = "btrfs";
-              extraArgs = [ "-f" ];
+              extraArgs = [ "-L" "nixos-root" "-f" ];
               subvolumes = {
                 "/tmp" = {};
                 "/tmp/root" = {
@@ -51,7 +52,12 @@
           };
         };
       };
-      postCreateHook = "btrfs subvol snapshot /tmp/root /tmp/root@blank";
+      postCreateHook = ''
+      MOUNT=$(mktemp -d)
+      mount "/dev/disk/by-label/nixos-root" "$MOUNT"
+      trap 'umount $MOUNT; rm -rf $MOUNT' EXIT
+      btrfs subvol snapshot "$MOUNT/tmp/root" "$MOUNT/tmp/root@blank"
+      '';
     };
   };
 }
