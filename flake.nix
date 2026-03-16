@@ -27,6 +27,9 @@
           ./system.nix
 	  ./impermanence.nix
 
+	  # Wendy-specific modules
+	  ./wendy.nix
+
           disko.nixosModules.disko
 	  impermanence.nixosModules.impermanence
         ];

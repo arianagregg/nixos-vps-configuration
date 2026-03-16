@@ -3,6 +3,7 @@
 {
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
+    ./nginx.nix
   ];
 
   boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "virtio_scsi" "sd_mod" "sr_mod" ];
@@ -42,7 +43,6 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBLFdD+qIFApRViRbqyWJTJads23WuGAwvxZPMDRnWKf telempiel"
     ];
     shell = pkgs.zsh;
-    password = "password"; # literally just to fix ssh
   };
 
   # passwordless sudo

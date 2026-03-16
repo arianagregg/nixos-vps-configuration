@@ -51,6 +51,13 @@
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
       "/var/log"
-    ];
+    ] ++ (if config.services.nginx.enable then [
+      {
+      directory = "/var/www";
+      user = "nginx";
+      group = "nginx";
+      mode = "755";
+      }
+    ] else []);
   };
 }
