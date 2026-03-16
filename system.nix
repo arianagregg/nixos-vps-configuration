@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{ config, lib, pkgs, modulesPath, hostname, ... }:
 
 {
   imports = [
@@ -11,6 +11,7 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   # Somehow prevents "mirroredBoots" error??? Idk man just leave it alone
+  boot.loader.grub.device = lib.mkForce "/dev/sda";
   boot.loader.grub.devices = lib.mkForce [ "/dev/sda" ];
 
   environment.systemPackages = with pkgs; [
@@ -41,10 +42,17 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBLFdD+qIFApRViRbqyWJTJads23WuGAwvxZPMDRnWKf telempiel"
     ];
     shell = pkgs.zsh;
+    password = "password"; # literally just to fix ssh
   };
 
   # passwordless sudo
   security.sudo.wheelNeedsPassword = false;
+
+  # Enable qemu-guest-agent for management from the Hetzner console
+  services.qemuGuest.enable = true;
+
+  # Hostname
+  networking.hostName = "${hostname}";
 
   system.stateVersion = "25.11";
 }

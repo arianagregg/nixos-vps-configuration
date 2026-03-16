@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-25.11";
+      url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
     disko = {
@@ -13,9 +13,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs@{ self, nixpkgs, disko, impermanence, ... }: {
+  outputs = inputs@{ self, nixpkgs, disko, ... }: {
     nixosConfigurations = {
-      wendy = nixpkgs.lib.nixosSystem {
+      wendy = let
+        hostname = "wendy";
+      in nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit hostname; };
+
         system = "x86_64-linux";
 
         modules = with inputs; [

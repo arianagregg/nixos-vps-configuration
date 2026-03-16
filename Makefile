@@ -8,10 +8,10 @@ test:
 	done
 
 $(foreach system,$(systems),install-$(system)):
-	nixos-anywhere --show-trace --flake .#$(subst install-,,$@) --target-host cxefa@$($(subst install-,,$@)_ip) --build-on remote -p $(port) -i $(keyfile)
+	nixos-anywhere --show-trace --flake .#$(subst install-,,$@) --target-host root@$($(subst install-,,$@)_ip) --build-on remote
 
 $(foreach system,$(systems),rebuild-$(system)):
-	NIX_SSHOPTS="-i $(keyfile) -p $(port)" nixos-rebuild --show-trace --flake .#$(subst rebuild-,,$@) --target-host cxefa@$($(subst rebuild-,,$@)_ip) --build-host cxefa@$($(subst rebuild-,,$@)_ip) switch
+	NIX_SSHOPTS="-i $(keyfile) -p $(port)" nixos-rebuild --show-trace --flake .#$(subst rebuild-,,$@) --target-host cxefa@$($(subst rebuild-,,$@)_ip) --build-host cxefa@$($(subst rebuild-,,$@)_ip) --ask-sudo-password switch
 
 all: $(foreach system,$(systems),rebuild-$(system))
 
