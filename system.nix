@@ -16,6 +16,8 @@
   boot.loader.grub.devices = lib.mkForce [ "/dev/sda" ];
 
   environment.systemPackages = with pkgs; [
+    cowsay
+    fortune
     htop
     neovim
     wget
