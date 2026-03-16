@@ -50,6 +50,14 @@
   # passwordless sudo
   security.sudo.wheelNeedsPassword = false;
 
+  # security stuff
+  services.fail2ban.enable = true;
+  services.endlessh = {
+    enable = true;
+    port = 22;
+    openFirewall = true;
+  };
+
   # Enable qemu-guest-agent for management from the Hetzner console
   services.qemuGuest.enable = true;
   # Enable auto login for easier debugging from Hetzner
