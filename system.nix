@@ -50,9 +50,19 @@
 
   # Enable qemu-guest-agent for management from the Hetzner console
   services.qemuGuest.enable = true;
+  # Enable auto login for easier debugging from Hetzner
+  services.getty.autologinUser = "cxefa";
 
   # Hostname
   networking.hostName = "${hostname}";
+
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+      # Reboot daily
+      "0 0 * * * root reboot"
+    ];
+  };
 
   system.stateVersion = "25.11";
 }
