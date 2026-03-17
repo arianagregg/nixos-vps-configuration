@@ -69,12 +69,6 @@
         group = "nginx";
         mode = "755";
       }
-      {
-        directory = "${config.services.postgresql.dataDir}";
-	user = "postgres";
-	group = "postgres";
-	mode = "700";
-      }
     ];
   };
 }
