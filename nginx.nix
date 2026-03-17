@@ -30,6 +30,7 @@
         '';
       };
       "pds.telempiel.gay" = {
+        addSSL = true;
         locations."/" = {
 	  proxyPass = "https://pds.telempiel.gay:3000/";
 	};
