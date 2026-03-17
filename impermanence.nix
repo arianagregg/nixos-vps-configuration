@@ -52,16 +52,22 @@
       "/var/lib/systemd/coredump"
       "/var/log"
       {
+        directory = "/var/lib/pds";
+	user = "pds";
+	group = "pds";
+	mode = "755";
+      }
+      {
+        directory = "/var/lib/acme";
+        user = "acme";
+        group = "acme";
+	mode = "755";
+      }
+      {
         directory = "/var/www";
         user = "nginx";
         group = "nginx";
         mode = "755";
-      }
-      {
-        directory = "${config.services.tranquil-pds.dataDir}";
-	user = "tranquil-pds";
-	group = "tranquil-pds";
-	mode = "750";
       }
       {
         directory = "${config.services.postgresql.dataDir}";

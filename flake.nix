@@ -12,10 +12,6 @@
       url = "github:nix-community/impermanence";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    tranquil = {
-      url = "git+https://tangled.org/tranquil.farm/tranquil-pds?ref=main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
   outputs = inputs@{ self, nixpkgs, disko, ... }: {
     nixosConfigurations = {
@@ -30,14 +26,13 @@
           ./disko.nix
           ./system.nix
 	  ./impermanence.nix
-	  ./tranquil.nix
+	  ./bsky.nix
 
 	  # Wendy-specific modules
 	  ./wendy.nix
 
           disko.nixosModules.disko
 	  impermanence.nixosModules.impermanence
-          tranquil.nixosModules.tranquil-pds
         ];
       };
     };

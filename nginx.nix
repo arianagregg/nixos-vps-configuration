@@ -29,11 +29,6 @@
           fastcgi_index index.php;
         '';
       };
-      "telempiel.gay" = {
-        addSSL = true;
-	useACMEHost = "telempiel.gay-pds";
-	locations."/.well-known/".root = "/var/www/telempiel/acme/acme-challenge/";
-      };
     };
   };
   networking.firewall.allowedTCPPorts = [ 80 443 ];
