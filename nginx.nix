@@ -29,6 +29,11 @@
           fastcgi_index index.php;
         '';
       };
+      "pds.telempiel.gay" = {
+        locations."/" = {
+	  proxyPass = "https://pds.telempiel.gay:3000/";
+	};
+      };
     };
   };
   networking.firewall.allowedTCPPorts = [ 80 443 ];
