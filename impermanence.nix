@@ -51,13 +51,24 @@
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
       "/var/log"
-    ] ++ (if config.services.nginx.enable then [
       {
-      directory = "/var/www";
-      user = "nginx";
-      group = "nginx";
-      mode = "755";
+        directory = "/var/www";
+        user = "nginx";
+        group = "nginx";
+        mode = "755";
       }
-    ] else []);
+      {
+        directory = "${config.services.tranquil-pds.dataDir}";
+	user = "tranquil-pds";
+	group = "tranquil-pds";
+	mode = "750";
+      }
+      {
+        directory = "${config.services.postgresql.dataDir}";
+	user = "postgres";
+	group = "postgres";
+	mode = "700";
+      }
+    ];
   };
 }

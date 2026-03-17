@@ -1,0 +1,3 @@
+[submodule "tranquil/secrets"]
+	path = tranquil/secrets
+	url = git@github.com-arianagregg:arianagregg/tranquil-pds-secrets.git
