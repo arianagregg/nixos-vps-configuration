@@ -65,9 +65,15 @@
       }
       {
         directory = "/var/www";
-        user = "nginx";
-        group = "nginx";
+        user = config.services.caddy.user;
+        group = config.services.caddy.group;
         mode = "755";
+      }
+      {
+        directory = config.services.caddy.dataDir;
+	user = config.services.caddy.user;
+	group = config.services.caddy.group;
+	mode = "755";
       }
     ];
   };

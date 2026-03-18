@@ -2,5 +2,5 @@
 
 {
   # Enable the web server
-  services.nginx.enable = true;
+  services.caddy.enable = true;
 }
