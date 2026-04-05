@@ -16,6 +16,11 @@
 	  reverse_proxy http://127.0.0.1:3000
 	'';
       };
+      "bsky.telempiel.gay" = {
+        extraConfig = ''
+	  reverse_proxy http://127.0.0.1:3000
+	'';
+      };
     };
   };
   #services.nginx = {
