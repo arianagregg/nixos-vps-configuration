@@ -21,7 +21,7 @@
             };
           };
           root = {
-	    label = "root";
+            label = "root";
             size = "100%";
             content = {
               type = "btrfs";

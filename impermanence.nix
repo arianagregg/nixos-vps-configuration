@@ -53,15 +53,15 @@
       "/var/log"
       {
         directory = "/var/lib/pds";
-	user = "pds";
-	group = "pds";
-	mode = "755";
+        user = "pds";
+        group = "pds";
+        mode = "755";
       }
       {
         directory = "/var/lib/acme";
         user = "acme";
         group = "acme";
-	mode = "755";
+        mode = "755";
       }
       {
         directory = "/var/www";
@@ -71,9 +71,9 @@
       }
       {
         directory = config.services.caddy.dataDir;
-	user = config.services.caddy.user;
-	group = config.services.caddy.group;
-	mode = "755";
+        user = config.services.caddy.user;
+        group = config.services.caddy.group;
+        mode = "755";
       }
     ];
   };

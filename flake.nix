@@ -25,14 +25,14 @@
         modules = with inputs; [
           ./disko.nix
           ./system.nix
-	  ./impermanence.nix
-	  ./bsky.nix
+          ./impermanence.nix
+          ./bsky.nix
 
-	  # Wendy-specific modules
-	  ./wendy.nix
+          # Wendy-specific modules
+          ./wendy.nix
 
           disko.nixosModules.disko
-	  impermanence.nixosModules.impermanence
+          impermanence.nixosModules.impermanence
         ];
       };
     };

@@ -6,20 +6,20 @@
     virtualHosts = {
       "lovetocode999.xyz" = {
         extraConfig = ''
-	  root * /var/www/lovetocode999
-	  file_server
-	  php_fastcgi unix//run/php/php-version-fpm.sock
-	'';
+          root * /var/www/lovetocode999
+          file_server
+          php_fastcgi unix//run/php/php-version-fpm.sock
+        '';
       };
       "pds.telempiel.gay" = {
         extraConfig = ''
-	  reverse_proxy http://127.0.0.1:3000
-	'';
+          reverse_proxy http://127.0.0.1:3000
+        '';
       };
       "bsky.telempiel.gay" = {
         extraConfig = ''
-	  reverse_proxy http://127.0.0.1:3000
-	'';
+          reverse_proxy http://127.0.0.1:3000
+        '';
       };
     };
   };
