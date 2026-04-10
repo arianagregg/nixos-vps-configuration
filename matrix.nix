@@ -5,7 +5,7 @@
     admin.enable = true;
     settings = {
       global = {
-	  	database_path = lib.mkForce "/var/lib/continuwuity-database";
+	  	database_path = "/var/lib/continuwuity-database";
         server_name = "matrix.telempiel.gay";
         allow_registration = true;
         allow_encryption = true;
