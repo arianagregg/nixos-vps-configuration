@@ -52,7 +52,7 @@
       "/var/lib/systemd/coredump"
       "/var/log"
       {
-        directory = config.services.matrix-continuwuity.global.database_path;
+        directory = "/var/lib/private/continuwuity";
         user = config.services.matrix-continuwuity.user;
         group = config.services.matrix-continuwuity.group;
         mode = "755";
