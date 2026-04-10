@@ -21,6 +21,20 @@
           reverse_proxy http://127.0.0.1:3000
         '';
       };
+      "matrix.telempiel.gay:443" = {
+        extraConfig = ''
+          handle /_matrix/* {
+            reverse_proxy http://127.0.0.1:6167
+          }
+        '';
+      };
+      "matrix.telempiel.gay:8448" = {
+        extraConfig = ''
+          handle /_matrix/* {
+            reverse_proxy http://127.0.0.1:6167
+          }
+        '';
+      };
     };
   };
   #services.nginx = {
@@ -60,7 +74,7 @@
   #    };
   #  };
   #};
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 8448 6167 ];
   #security.acme = {
   #  acceptTerms = true;
   #  defaults.email = "webadmin@lovetocode999.xyz";

@@ -52,6 +52,12 @@
       "/var/lib/systemd/coredump"
       "/var/log"
       {
+        directory = config.services.matrix-continuwuity.global.database_path;
+        user = config.services.matrix-continuwuity.user;
+        group = config.services.matrix-continuwuity.group;
+        mode = "755";
+      }
+      {
         directory = "/var/lib/pds";
         user = "pds";
         group = "pds";

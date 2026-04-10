@@ -27,6 +27,7 @@
           ./system.nix
           ./impermanence.nix
           ./bsky.nix
+		  ./matrix.nix
 
           # Wendy-specific modules
           ./wendy.nix
