@@ -6,7 +6,7 @@
     settings = {
       global = {
         server_name = "matrix.telempiel.gay";
-        allow_registration = false;
+        allow_registration = true;
         allow_encryption = true;
         allow_federation = true;
 	    };
