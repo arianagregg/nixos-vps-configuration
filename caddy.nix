@@ -12,8 +12,12 @@
         '';
       };
       "pds.telempiel.gay" = {
+	    serverAliases = [ "*.bsky.telempiel.gay" "bsky.telempiel.gay" "*.pds.telempiel.gay" ];
         extraConfig = ''
           reverse_proxy http://127.0.0.1:3000
+		  tls {
+		    on_demand
+		  }
         '';
       };
       "bsky.telempiel.gay" = {
