@@ -2,6 +2,11 @@
 
 {
   services.caddy = {
+    globalConfig = ''
+	  on_demand_tls {
+	    ask http://127.0.0.1:3000
+	  }
+	'';
     email = "webadmin@lovetocode999.xyz";
     virtualHosts = {
       "lovetocode999.xyz" = {
