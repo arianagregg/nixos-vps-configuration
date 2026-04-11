@@ -20,12 +20,6 @@
 		  }
         '';
       };
-      "bsky.telempiel.gay" = {
-	    serverAliases = [ "*.bsky.telempiel.gay" ];
-        extraConfig = ''
-          reverse_proxy http://127.0.0.1:3000
-        '';
-      };
       "matrix.telempiel.gay:443" = {
         extraConfig = ''
           handle /_matrix/* {
