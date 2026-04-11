@@ -6,10 +6,12 @@
 	  on_demand_tls {
 	    ask http://127.0.0.1:3000
 	  }
+	  auto_https disable_redirects
 	'';
     email = "webadmin@lovetocode999.xyz";
     virtualHosts = {
       "lovetocode999.xyz" = {
+	    serverAliases = [ "http://lovetocode999.xyz" ];
         extraConfig = ''
           root * /var/www/lovetocode999
           file_server
