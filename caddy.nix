@@ -13,7 +13,7 @@
         extraConfig = ''
           root * /var/www/lovetocode999
           file_server
-          php_fastcgi unix//run/php/php-version-fpm.sock
+          php_fastcgi unix/${config.services.phpfpm.pools.mypool.socket}
         '';
       };
       "pds.telempiel.gay" = {
