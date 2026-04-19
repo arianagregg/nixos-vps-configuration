@@ -4,7 +4,7 @@ port := 5433
 keyfile := ~/.ssh/xyz
 test:
 	for system in $(systems) ; do \
-		nixos-anywhere --show-trace --flake .#$$system --vm-test ; \
+		nixos-anywhere --show-trace --flake .?submodules=1#$$system --vm-test ; \
 	done
 
 $(foreach system,$(systems),install-$(system)):
