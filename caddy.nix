@@ -3,15 +3,15 @@
 {
   services.caddy = {
     globalConfig = ''
-	  on_demand_tls {
-	    ask http://127.0.0.1:3000
-	  }
-	  auto_https disable_redirects
-	'';
+      on_demand_tls {
+        ask http://127.0.0.1:3000
+      }
+      auto_https disable_redirects
+    '';
     email = "webadmin@lovetocode999.xyz";
     virtualHosts = {
       "lovetocode999.xyz" = {
-	    serverAliases = [ "http://lovetocode999.xyz" ];
+        serverAliases = [ "http://lovetocode999.xyz" ];
         extraConfig = ''
           root * /var/www/lovetocode999
           file_server
@@ -19,16 +19,19 @@
         '';
       };
       "pds.telempiel.gay" = {
-	    serverAliases = [ "*.bsky.telempiel.gay" "bsky.telempiel.gay" "*.pds.telempiel.gay" ];
+        serverAliases = [ "*.bsky.telempiel.gay" "bsky.telempiel.gay" "*.pds.telempiel.gay" ];
         extraConfig = ''
           reverse_proxy http://127.0.0.1:3000
-		  tls {
-		    on_demand
-		  }
+          tls {
+            on_demand
+          }
         '';
       };
       "matrix.telempiel.gay:443" = {
         extraConfig = ''
+          root * ${pkgs.cinny-unwrapped}
+		  file_server
+		  try_files {path} / index.html
           handle /_matrix/* {
             reverse_proxy http://127.0.0.1:6167
           }
