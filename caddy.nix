@@ -29,9 +29,14 @@
       };
 	  "matrix.telempiel.gay" = {
         extraConfig = ''
-          root * ${pkgs.cinny-unwrapped}
-		  file_server
-		  try_files {path} / index.html
+		  handle /_matrix/* {
+		    reverse_proxy http://127.0.0.1:6167
+		  }
+		  handle {
+            root * ${pkgs.cinny-unwrapped}
+		    file_server
+		    try_files {path} / index.html
+		  }
 		'';
 	  };
       "matrix.telempiel.gay:443" = {
