@@ -7,13 +7,14 @@
   ];
 
   boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "virtio_scsi" "sd_mod" "sr_mod" ];
+  boot.initrd.systemd.enable = true;
 
   networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   # Somehow prevents "mirroredBoots" error??? Idk man just leave it alone
-  boot.loader.grub.device = lib.mkForce "/dev/sda";
-  boot.loader.grub.devices = lib.mkForce [ "/dev/sda" ];
+  #boot.loader.grub.device = lib.mkForce "/dev/sda";
+  #boot.loader.grub.devices = lib.mkForce [ "/dev/sda" ];
 
   environment.systemPackages = with pkgs; [
     cowsay

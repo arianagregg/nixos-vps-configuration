@@ -54,7 +54,7 @@
       };
       postCreateHook = ''
       MOUNT=$(mktemp -d)
-      mount "/dev/disk/by-label/nixos-root" "$MOUNT"
+      mount "/dev/disk/by-partlabel/root" "$MOUNT"
       trap 'umount $MOUNT; rm -rf $MOUNT' EXIT
       btrfs subvol snapshot "$MOUNT/tmp/root" "$MOUNT/tmp/root@blank"
       '';
