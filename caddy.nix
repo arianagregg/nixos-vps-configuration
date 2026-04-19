@@ -35,7 +35,7 @@
 		  handle {
             root * ${pkgs.cinny-unwrapped}
 		    file_server
-		    try_files {path} / index.html
+		    try_files {path} /index.html
 		  }
 		'';
 	  };
