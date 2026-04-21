@@ -70,8 +70,8 @@
   services.cron = {
     enable = true;
     systemCronJobs = [
-      # Reboot daily
-      "0 0 * * * root reboot"
+      # Reboot weekly
+      "0 9 * * 2 root reboot"
     ];
   };
 
