@@ -1,32 +1,41 @@
-2,4c2,4
-<   "defaultHomeserver": 1,
-<   "homeserverList": ["converser.eu", "matrix.org", "mozilla.org", "unredacted.org", "xmr.se"],
-<   "allowCustomHomeservers": true,
----
->   "defaultHomeserver": 0,
->   "homeserverList": ["matrix.telempiel.gay"],
->   "allowCustomHomeservers": false,
-9,14c9,10
-<       "#cinny-space:matrix.org",
-<       "#community:matrix.org",
-<       "#space:unredacted.org",
-<       "#science-space:matrix.org",
-<       "#libregaming-games:tchncs.de",
-<       "#mathematics-on:matrix.org"
----
->       "#homespace:matrix.telempiel.gay",
->       "#community:the-apothecary.club"
-17,22c13,14
-<       "#cinny:matrix.org",
-<       "#freesoftware:matrix.org",
-<       "#pcapdroid:matrix.org",
-<       "#gentoo:matrix.org",
-<       "#PrivSec.dev:arcticfoxes.net",
-<       "#disroot:aria-net.org"
----
->       "#announcements:matrix.telempiel.gay",
->       "#text-general:matrix.telempiel.gay"
-24c16
-<     "servers": ["matrix.org", "mozilla.org", "unredacted.org"]
----
->     "servers": ["mozilla.org", "unredacted.org", "matrix.tchncs.de", "the-apothecary.club"]
+diff --git a/config.json b/config.json
+index 8887c1c..d00f02b 100644
+--- a/config.json
++++ b/config.json
+@@ -1,28 +1,19 @@
+ {
+-  "defaultHomeserver": 1,
+-  "homeserverList": ["converser.eu", "matrix.org", "mozilla.org", "unredacted.org", "xmr.se"],
+-  "allowCustomHomeservers": true,
++  "defaultHomeserver": 0,
++  "homeserverList": ["matrix.telempiel.gay"],
++  "allowCustomHomeservers": false,
+ 
+   "featuredCommunities": {
+     "openAsDefault": false,
+     "spaces": [
+-      "#cinny-space:matrix.org",
+-      "#community:matrix.org",
+-      "#space:unredacted.org",
+-      "#science-space:matrix.org",
+-      "#libregaming-games:tchncs.de",
+-      "#mathematics-on:matrix.org",
+-      "#stickers-and-emojis:tastytea.de"
++      "#homespace:matrix.telempiel.gay",
++      "#community:the-apothecary.club"
+     ],
+     "rooms": [
+-      "#cinny:matrix.org",
+-      "#freesoftware:matrix.org",
+-      "#pcapdroid:matrix.org",
+-      "#gentoo:matrix.org",
+-      "#PrivSec.dev:arcticfoxes.net",
+-      "#disroot:aria-net.org"
++      "#announcements:matrix.telempiel.gay",
++      "#text-general:matrix.telempiel.gay"
+     ],
+-    "servers": ["matrixrooms.info", "matrix.org", "mozilla.org", "unredacted.org"]
++    "servers": ["mozilla.org", "unredacted.org", "matrix.tchncs.de", "the-apothecary.club"]
+   },
+ 
+   "hashRouter": {
