@@ -9,7 +9,16 @@
         allow_registration = true;
         allow_encryption = true;
         allow_federation = true;
-	    };
+      };
     };
   };
+  nixpkgs.overlays = [
+    (final: prev: {
+      cinny-unwrapped = prev.cinny-unwrapped.overrideAttrs (old: rec {
+        patches = (old.patches or []) ++ [
+          ./patches/cinny-config-json.patch
+        ];
+      });
+    })
+  ];
 }
