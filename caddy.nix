@@ -34,11 +34,6 @@
 		  try_files {path} /index.html
 		'';
 	  };
-	  "matrix.telempiel.gay" = {
-	    extraConfig = ''
-		  redir https://cinny.telempiel.gay html
-		'';
-	  };
       "matrix.telempiel.gay:443" = {
         extraConfig = ''
           handle /_matrix/* {
