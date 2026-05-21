@@ -28,6 +28,8 @@
           ./impermanence.nix
           ./bsky.nix
 		  ./matrix.nix
+          ./akkoma.nix
+          ./postgres.nix
 
           # Wendy-specific modules
           ./wendy.nix
