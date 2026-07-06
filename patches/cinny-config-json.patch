@@ -1,5 +1,5 @@
 diff --git a/config.json b/config.json
-index aed232e..d00f02b 100644
+index a61bb96..d8adae4 100644
 --- a/config.json
 +++ b/config.json
 @@ -1,27 +1,19 @@
@@ -14,26 +14,26 @@ index aed232e..d00f02b 100644
    "featuredCommunities": {
      "openAsDefault": false,
      "spaces": [
--      "#cinny-space:matrix.org",
+-      "#cinny:matrix.org",
 -      "#community:matrix.org",
 -      "#space:unredacted.org",
+-      "#librewolf-community:matrix.org",
+-      "#stickers-and-emojis:tastytea.de",
+-      "#videogames:waywardinn.com",
 -      "#science-space:matrix.org",
 -      "#libregaming-games:tchncs.de",
 -      "#mathematics-on:matrix.org"
-+      "#homespace:matrix.telempiel.gay",
-+      "#community:the-apothecary.club"
++        "#homespace:matrix.telempiel.gay",
++        "#community:the-apothecary.club"
      ],
      "rooms": [
--      "#cinny:matrix.org",
+-      "#tuwunel:grin.hu",
 -      "#freesoftware:matrix.org",
--      "#pcapdroid:matrix.org",
--      "#gentoo:matrix.org",
--      "#PrivSec.dev:arcticfoxes.net",
--      "#disroot:aria-net.org"
-+      "#announcements:matrix.telempiel.gay",
-+      "#text-general:matrix.telempiel.gay"
+-      "#gentoo:matrix.org"
++        "#announcements:matrix.telempiel.gay",
++        "#text-general:matrix.telempiel.gay"
      ],
--    "servers": ["matrix.org", "mozilla.org", "unredacted.org"]
+-    "servers": ["matrixrooms.info", "matrix.org", "mozilla.org", "unredacted.org"]
 +    "servers": ["mozilla.org", "unredacted.org", "matrix.tchncs.de", "the-apothecary.club"]
    },
  
